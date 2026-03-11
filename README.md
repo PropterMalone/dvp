@@ -24,6 +24,14 @@ See [WINDOWS-SETUP.md](WINDOWS-SETUP.md) for full instructions.
   ./generate-style.sh shelby ~/texts/sample1.txt ~/texts/sample2.txt
   ```
 
+## Docs
+
+- [Getting Started](docs/getting-started.md) — first session, basic usage, how it differs from ChatGPT
+- [Projects](docs/projects.md) — organizing your work into folders with per-project context
+- [Memory](docs/memory.md) — how Claude remembers you across sessions
+- [API Keys](docs/api-keys.md) — connecting to stock data services (Alpha Vantage, Finnhub, etc.)
+- [Tips & Tricks](docs/tips.md) — power-user patterns, keyboard shortcuts, session workflows
+
 ## Updating
 
 The setup script is idempotent. To get updates:
