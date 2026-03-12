@@ -17,7 +17,7 @@ Update this section as you go — the more context Claude has, the better it wor
 
 ## Environment
 
-- **Machine**: Windows (via WSL)
+- **Machine**: Windows
 - **Never commit**: `.env` files (API keys, secrets)
 - **Always maintain**: `.env.example` (so you remember what keys you need)
 

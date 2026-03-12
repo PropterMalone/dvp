@@ -4,7 +4,7 @@ You've installed Claude Code. Here's how to actually use it.
 
 ## The Basics
 
-Open Ubuntu from your Start menu and type `claude`. That's it — you're in.
+Open your terminal (PowerShell on Windows, Terminal on Mac) and type `claude`. That's it — you're in.
 
 Claude Code is a conversation in your terminal. You type, Claude responds. It can also read and create files on your computer, which is the big difference from ChatGPT.
 
@@ -66,7 +66,7 @@ These are shortcuts that trigger specific behaviors:
 ## Exiting
 
 - Type `/exit` or press `Ctrl+C` to leave Claude Code
-- To come back later: open Ubuntu, type `claude`
+- To come back later: open your terminal, type `claude`
 
 ## Next Steps
 

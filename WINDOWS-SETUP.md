@@ -1,47 +1,38 @@
-# Windows Setup — Before the Script
+# Windows Setup
 
-Claude Code runs inside WSL (Windows Subsystem for Linux). This is a one-time setup that takes about 10 minutes.
+One command. Takes about 5 minutes.
 
-## Step 1: Install WSL
+## Setup
 
-1. Open **PowerShell** as Administrator
-   - Press the Windows key, type "PowerShell", right-click "Windows PowerShell", choose "Run as administrator"
+1. Open **PowerShell** (press the Windows key, type "PowerShell", click it)
 2. Paste this command and press Enter:
    ```
-   wsl --install
+   irm https://raw.githubusercontent.com/PropterMalone/dvp/main/setup.ps1 | iex
    ```
-3. **Restart your computer** when prompted
 
-## Step 2: Set up Ubuntu
+The script installs Git, Claude Code, and your configuration automatically.
 
-1. After restart, Ubuntu will open automatically (or search for "Ubuntu" in the Start menu)
-2. It will ask you to create a username and password — this is just for WSL, pick something simple
-3. Once you see a command prompt (something like `drew@laptop:~$`), you're in
+## Using Claude Code
 
-## Step 3: Run the setup script
-
-Still in that Ubuntu window, paste this and press Enter:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/PropterMalone/dvp/main/setup.sh | bash
-```
-
-The script installs everything else automatically. When it's done, it'll tell you how to start Claude Code.
-
-## After Setup
-
-To use Claude Code in the future:
-1. Open **Ubuntu** from the Start menu
+1. Open **PowerShell**
 2. Type `claude` and press Enter
 
 That's it. Claude remembers your preferences and ongoing work between sessions.
 
+## Updating
+
+When Karl pushes updates to the config:
+
+```
+irm https://raw.githubusercontent.com/PropterMalone/dvp/main/setup.ps1 | iex
+```
+
+Same command. It pulls updates without overwriting your customizations.
+
 ## Troubleshooting
 
-**"WSL is not installed"**: Make sure you ran the install command as Administrator (Step 1).
+**"claude: command not found"**: Close PowerShell and open a new one, then try `claude` again.
 
-**Ubuntu doesn't open after restart**: Search for "Ubuntu" in the Start menu. If it's not there, open PowerShell and run `wsl --install -d Ubuntu`.
+**Script fails with a network error**: Check your internet connection and try again.
 
-**Script fails with a network error**: Check your internet connection and try running the curl command again.
-
-**"claude: command not found"**: Close Ubuntu and reopen it, then try `claude` again.
+**Something else broke**: Close and reopen PowerShell, type `claude` again. If it keeps happening, text Karl.

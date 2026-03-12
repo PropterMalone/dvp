@@ -88,12 +88,18 @@ claude
 
 **Claude is too verbose:** Tell it once: "Be more concise." It'll remember via `/wrap`.
 
-**Something broke:** Close and reopen Ubuntu, type `claude` again. If it keeps happening, text Karl.
+**Something broke:** Close and reopen your terminal, type `claude` again. If it keeps happening, text Karl.
 
 ## Updating Your Setup
 
-When Karl pushes updates to the config:
+When Karl pushes updates to the config, run the setup command again:
 
+**Windows (PowerShell):**
+```
+irm https://raw.githubusercontent.com/PropterMalone/dvp/main/setup.ps1 | iex
+```
+
+**Linux/Mac:**
 ```bash
 cd ~/dvp && git pull && bash setup.sh
 ```

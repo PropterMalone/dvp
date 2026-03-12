@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# DVP Setup — installs Node.js, Claude Code, and places config files.
-# Run inside WSL (Ubuntu).
+# DVP Setup — places Claude Code config files.
+# Works on Windows (Git Bash) and Linux/macOS.
 set -euo pipefail
 
 REPO_URL="https://github.com/PropterMalone/dvp.git"
 DVP_DIR="$HOME/dvp"
 CLAUDE_DIR="$HOME/.claude"
 STEP=0
-TOTAL_STEPS=5
+TOTAL_STEPS=3
 
 # --- Helpers ---
 show_step() {
@@ -30,54 +30,25 @@ echo "  DVP Setup"
 echo "  ========================================"
 echo ""
 
-# --- Step 1: Node.js ---
-show_step "Node.js"
-if command -v node &>/dev/null; then
-    show_ok "Ready ($(node --version))."
-else
-    echo "         Installing..."
-    # Use NodeSource for current LTS
-    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - >/dev/null 2>&1
-    sudo apt-get install -y nodejs >/dev/null 2>&1
-    if ! command -v node &>/dev/null; then
-        show_warn "Could not install Node.js automatically."
-        show_warn "Please install from https://nodejs.org/ and run this script again."
-        exit 1
-    fi
-    show_ok "Installed ($(node --version))."
-fi
+# --- Step 1: Check prerequisites ---
+show_step "Checking prerequisites"
 
-# --- Step 2: Git ---
-show_step "Git"
-if command -v git &>/dev/null; then
-    show_ok "Ready."
-else
-    echo "         Installing..."
-    sudo apt-get update -qq >/dev/null 2>&1
-    sudo apt-get install -y git >/dev/null 2>&1
-    if ! command -v git &>/dev/null; then
-        show_warn "Could not install Git."
-        exit 1
-    fi
-    show_ok "Installed."
+if ! command -v git &>/dev/null; then
+    show_warn "Git is not installed."
+    show_warn "Install from https://git-scm.com/download/win and run this script again."
+    exit 1
 fi
+show_ok "Git ready."
 
-# --- Step 3: Claude Code ---
-show_step "Claude Code"
-if command -v claude &>/dev/null; then
-    show_ok "Ready."
-else
-    echo "         Installing..."
-    npm install -g @anthropic-ai/claude-code >/dev/null 2>&1
-    if ! command -v claude &>/dev/null; then
-        show_warn "Could not install Claude Code."
-        show_warn "Try: npm install -g @anthropic-ai/claude-code"
-        exit 1
-    fi
-    show_ok "Installed."
+if ! command -v claude &>/dev/null; then
+    show_warn "Claude Code is not installed."
+    show_warn "Open PowerShell and run: irm https://claude.ai/install.ps1 | iex"
+    show_warn "Then close PowerShell, reopen Git Bash, and run this script again."
+    exit 1
 fi
+show_ok "Claude Code ready."
 
-# --- Step 4: DVP repo ---
+# --- Step 2: DVP repo ---
 show_step "Configuration files"
 if [ -d "$DVP_DIR/.git" ]; then
     echo "         Checking for updates..."
@@ -93,7 +64,7 @@ else
     show_ok "Downloaded."
 fi
 
-# --- Step 5: Place config ---
+# --- Step 3: Place config ---
 show_step "Claude Code configuration"
 mkdir -p "$CLAUDE_DIR/styles" "$CLAUDE_DIR/skills"
 
