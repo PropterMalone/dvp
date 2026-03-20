@@ -4,7 +4,8 @@ Claude Code setup for Drew. Persistent memory, switchable communication styles, 
 
 ## Quick Start
 
-See [WINDOWS-SETUP.md](WINDOWS-SETUP.md) for full instructions.
+- **Mac**: [MAC-SETUP.md](MAC-SETUP.md)
+- **Windows**: [WINDOWS-SETUP.md](WINDOWS-SETUP.md)
 
 ## What's Included
 

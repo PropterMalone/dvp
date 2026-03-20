@@ -1,5 +1,7 @@
 # Getting Started with Claude Code
 
+> Haven't installed yet? See [Mac Setup](../MAC-SETUP.md) or [Windows Setup](../WINDOWS-SETUP.md).
+
 You've installed Claude Code. Here's how to actually use it.
 
 ## The Basics
