@@ -31,8 +31,8 @@ Claude has a persistent memory system. It remembers things across conversations.
 
 ## Session Flow
 
-- Start a session with `/kickoff` — Claude orients from memory and asks what you want to work on
-- End a session with `/wrap` — Claude saves what it learned and notes anything unfinished
+- Start a session with `/kickoff.md` — Claude orients from memory and asks what you want to work on
+- End a session with `/wrap.md` — Claude saves what it learned and notes anything unfinished
 
 ## Tips
 

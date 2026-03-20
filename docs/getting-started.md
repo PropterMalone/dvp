@@ -10,9 +10,9 @@ Claude Code is a conversation in your terminal. You type, Claude responds. It ca
 
 ### Your First Session
 
-Try typing `/kickoff`. Claude will introduce itself and ask what you want to work on.
+Try typing `/kickoff.md`. Claude will introduce itself and ask what you want to work on.
 
-When you're done, type `/wrap`. Claude saves what it learned about you so it remembers next time.
+When you're done, type `/wrap.md`. Claude saves what it learned about you so it remembers next time.
 
 ### How It's Different from ChatGPT
 
@@ -57,8 +57,8 @@ These are shortcuts that trigger specific behaviors:
 
 | Command | What It Does |
 |---------|-------------|
-| `/kickoff` | Start a session — Claude checks its memory and asks your agenda |
-| `/wrap` | End a session — Claude saves what it learned |
+| `/kickoff.md` | Start a session — Claude checks its memory and asks your agenda |
+| `/wrap.md` | End a session — Claude saves what it learned |
 | `/style direct` | Switch to concise, blunt communication |
 | `/style karl` | Switch to Karl's voice (casual, sardonic) |
 | `/style custom` | Switch to your own defined style |
